@@ -12,12 +12,14 @@ public class FacturaVencida extends Factura{
 
     @Override
     public long calcularTotal() {
-        return 0;
+         LocalDate fechaActual = LocalDate.now();
+        long diasVencimiento = getFechaDeVencimiento().until(fechaActual, ChronoUnit.DAYS
+        return (int) (VALOR_DIA_VENCIDO * diasVencimiento);
     }
 
     public int getDiasVencidos(){
         LocalDate fechaActual = LocalDate.now();
         long diasVencimiento = getFechaDeVencimiento().until(fechaActual, ChronoUnit.DAYS);
-        return (int) (VALOR_DIA_VENCIDO * diasVencimiento);
+        return diasVencimiento;
     }
 }
