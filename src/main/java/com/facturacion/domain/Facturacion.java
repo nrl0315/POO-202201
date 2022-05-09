@@ -34,7 +34,7 @@ public class Facturacion {
     }
 
     public Factura getFacturaMasCara(){
-        return facturas.Collections.max(1);
+        return facturas.Collections.max(facturas);
 
     }
 
